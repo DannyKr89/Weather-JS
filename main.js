@@ -28,6 +28,7 @@ async function getLatLon(city) {
 
 searchForm.addEventListener('submit', function(event) {
     event.preventDefault()
+    cityInput.blur()
     if (!cityInput.value) {
         return;
     }
