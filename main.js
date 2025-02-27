@@ -55,6 +55,6 @@ function showData(data){
     cityEl.innerText = city
     conditionEl.innerText = condition
     humidityEl.innerText = humidity
-    windEl.innerHTML = windSpeed + 'м/с'
+    windEl.innerHTML = windSpeed + ' м/с'
     
 }
