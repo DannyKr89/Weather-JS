@@ -3,14 +3,16 @@ const cityInput = document.querySelector(".input");
 const container = document.querySelector(".container");
 
 async function fetchData(lat, lon) {
-    const url = `http://cors-anywhere.herokuapp.com/https://api.weather.yandex.ru/v2/informers?lat=${lat}&lon=${lon}&lang=ru_RU`;
+    const url = `https://cors-anywhere.herokuapp.com/https://api.weather.yandex.ru/v2/informers?lat=${lat}&lon=${lon}&lang=ru_RU`;
     const resp = await fetch(url, {
         method: "GET",
         headers: {
             "X-Yandex-Weather-Key": "69f750fa-3fe5-4b9e-bdf6-7bcf061f70ab",
         },
     });
-    const data = await resp.json();
+    const data = await resp.json().catch(function(err){
+        console.log(err)
+    })
     
     showData(data)
 }
